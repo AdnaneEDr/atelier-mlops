@@ -11,3 +11,4 @@ df.to_csv("data/raw/iris.csv", index=False)
 
 print("Dataset Iris généré avec succès")
 print("Nombre de lignes :", len(df))
+# Preparation du dataset Iris
