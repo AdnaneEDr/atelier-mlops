@@ -47,7 +47,7 @@ with mlflow.start_run(run_name="RandomForest_Iris"):
 
     os.makedirs("models", exist_ok=True)
     joblib.dump(model, "models/model.pkl")
-    mlflow.log_artifact("models/model.pkl", artifact_path="model")
+    mlflow.sklearn.log_model(sk_model=model, name="model", registered_model_name="IrisRandomForest", skops_trusted_types=["sklearn.tree._tree.Tree"])
 
     os.makedirs("reports", exist_ok=True)
     with open("reports/metrics.json", "w") as f:
